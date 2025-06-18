@@ -33,6 +33,50 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Gellix-Light.ttf",
+            "./assets/fonts/Gellix-Medium.ttf",
+            "./assets/fonts/Gellix-Regular.ttf",
+            "./assets/fonts/Gellix-Bold.ttf"
+          ],
+          "android": {
+            "fonts": [
+              {
+                "fontFamily": "Gellix",
+                "fontDefinitions": [
+                  {
+                    "path": "./assets/fonts/Gellix-Light.ttf",
+                    "weight": 300
+                  },
+                  {
+                    "path": "./assets/fonts/Gellix-Regular.ttf",
+                    "weight": 400
+                  },
+                  {
+                    "path": "./assets/fonts/Gellix-Medium.ttf",
+                    "weight": 500
+                  },
+                  {
+                    "path": "./assets/fonts/Gellix-Bold.ttf",
+                    "weight": 600
+                  }
+                ]
+              }
+            ]
+          },
+          "ios": {
+            "fonts": [
+              "./assets/fonts/Gellix-Light.ttf",
+              "./assets/fonts/Gellix-Medium.ttf",
+              "./assets/fonts/Gellix-Regular.ttf",
+              "./assets/fonts/Gellix-Bold.ttf"
+            ]
+          }
+        }
       ]
     ],
     "experiments": {
