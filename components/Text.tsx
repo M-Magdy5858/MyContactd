@@ -1,18 +1,18 @@
 import { textStyles, TTextStyleKey } from "@/assets/styles/textStyles"
 import { FC, PropsWithChildren } from "react"
-import { StyleProp, Text, TextProps, TextStyle } from "react-native"
+import { Text as NativeText, StyleProp, TextProps, TextStyle } from "react-native"
 
-interface TBaseText extends PropsWithChildren<TextProps> {
+interface TText extends PropsWithChildren<TextProps> {
 	type?: TTextStyleKey
 	customStyle?: StyleProp<TextStyle>
 }
 
-const BaseText : FC<TBaseText> = ({ type = "body_regular", customStyle, children, ...rest }) => {
+const Text : FC<TText> = ({ type = "body_regular", customStyle, children, ...rest }) => {
 	return (
-		<Text style={[textStyles[type], customStyle]} {...rest}>
+		<NativeText style={[textStyles[type], customStyle]} {...rest}>
             {children}
-		</Text>
+		</NativeText>
 	)
 }
 
-export default BaseText
+export default Text
