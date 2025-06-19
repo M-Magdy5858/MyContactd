@@ -1,50 +1,117 @@
-# Welcome to your Expo app 👋
+# 📇 React Native Contacts Favourites App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A simple React Native app built with **Expo Router** that:
 
-## Get started
+- Displays the device's contact list
+- Lets users mark contacts as favourites with a custom message
+- Fetches gender info via API
+- Persists favourite contacts locally
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 🚀 Features
 
-2. Start the app
+- 📱 Fetch and display device contacts
+- ⭐ Mark/unmark contacts as favourites
+- 📝 Add a message when favouriting a contact
+- 🧠 Expand/collapse long messages with "Show More"
+- 📊 Fetch gender info using [Genderize API](https://genderize.io/)
+- 💾 Persist data using Redux Persist + AsyncStorage
+- 🔐 Handle permission denial gracefully with settings link
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🛠️ Tech Stack
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+| Tool                  | Purpose                          |
+|-----------------------|----------------------------------|
+| Expo Router           | File-based navigation            |
+| React Native          | Mobile app framework             |
+| Redux Toolkit         | Global state management          |
+| redux-persist         | State persistence                |
+| AsyncStorage          | Local storage                    |
+| Formik + Yup          | Forms and validation             |
+| Expo Contacts         | Access device contact list       |
+| TypeScript            | Type-safe development            |
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 📦 Installation
 
-When you're ready, run:
+### 1. Clone the repo
 
 ```bash
-npm run reset-project
+git clone https://github.com/M-Magdy5858/MyContactd.git
+cd MyContactd
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Install dependencies
 
-## Learn more
+```bash
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### 3. Start the Expo server
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npx expo start
+```
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## 🔐 Permissions
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- The app requests **Contacts permission** at runtime.
+- If denied, the UI provides a button to open system **Settings** via `Linking.openSettings()`.
+
+---
+
+## 📁 Project Structure
+
+```
+├── app/                           # expo-router pages
+│   ├── _layout.tsx                # Root layout with providers (Redux, etc.)
+│   ├── index.tsx                  # Home screen ("/")
+│   └── modal/                     # Modal route folder
+│       └── add.tsx                # Modal screen for adding favourites
+│
+├── components/                    # Reusable components
+│   ├── AddFavouriteModal.tsx
+│   └── ContactCard.tsx
+│   └── Message.tsx
+│   └── Text.tsx
+│
+│
+├── store/                         # Redux Toolkit setup
+│   ├── index.ts
+│   └── contactsSlice.ts
+│
+├── types/                         # Global TypeScript types
+│   └── index.ts
+│
+├── utils/                         # Utility functions/helpers
+│   └── index.ts
+│
+├── assets/                        # Fonts, images, styles.
+│   └── ...
+│
+├── app.json                  # Expo config
+├── package.json
+├── package-lock.json
+├── eslint.config.js
+├── .gitignore
+├── tsconfig.json
+└── babel.config.js
+
+```
+
+---
+
+## 💡 Future Improvements
+
+- [ ] Add search/filter for contacts
+- [ ] Improve theming with dark/light
+- [ ] Add localization
+- [ ] Add unit and integration tests
+
+---
